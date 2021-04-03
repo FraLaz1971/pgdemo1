@@ -4,7 +4,7 @@ fortran demo program using pgplot library
 # to install
 ./configure
 # to compile
-make
+make pgprog1
 # to run
 make run
 
