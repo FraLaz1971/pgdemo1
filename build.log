@@ -1,25 +1,9 @@
-make: Warning: File 'Makefile.in' has modification time 135 s in the future
-g77 -fno-backslash -o pgprog1 pgdem1.o pgex0.o pgex1.o -Lx86_64-linux-gnu -L/usr/X11R6/lib -lX11 -L`pwd` -lpgplot -lpng -lz 
- 
-*** Finished compilation of PGPLOT example ***
- 
-Note that the following files will be needed.
- 
-       libpgplot.a
-       libpgplot.so
-       grfont.dat
-       rgb.txt
-       pgdisp
-       pgxwin_server
-       libXmPgplot.a
-       XmPgplot.h
-       libXaPgplot.a
-       XaPgplot.h
-       libtkpgplot.a
-       tkpgplot.h
- 
-Also note that subsequent usage of PGPLOT programs requires that
-the full path of the chosen installation directory be named in
-an environment variable named PGPLOT_DIR.
- 
-make: warning:  Clock skew detected.  Your build may be incomplete.
+g77 -fno-backslash -o pgprog1 pgdem1.o pgex0.o pgex1.o -L/c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc -L/usr/X11R6/lib -lX11 -L`pwd` -lpgplot -lpng -lz 
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(grdate.o):grdate.c:(.text+0x1c): undefined reference to `_imp___time32'
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(grdate.o):grdate.c:(.text+0x29): undefined reference to `_imp___ctime32'
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(tkdriv.o):tkdriv.c:(.text+0x1b): undefined reference to `__mingw_vfprintf'
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(tkdriv.o):tkdriv.c:(.text+0x81): undefined reference to `_imp____acrt_iob_func'
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(grfileio.o):grfileio.c:(.text+0x1b): undefined reference to `__mingw_vfprintf'
+/usr/lib/gcc/i686-pc-msys/9.3.0/../../../../i686-pc-msys/bin/ld: /c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc/libpgplot.a(grfileio.o):grfileio.c:(.text+0xe9): undefined reference to `_imp____acrt_iob_func'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:129: pgprog1] Error 1

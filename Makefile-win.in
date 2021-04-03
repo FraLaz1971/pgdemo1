@@ -1,0 +1,2 @@
+export PGPLOT_DIR=/c/users/serena/projects/pgdemo1/i686-w64-mingw32-gcc
+export GFORTRAN_DIR=/c/users/serena/projects/pgdemo1/i686-w64-mingw32-gfortran
