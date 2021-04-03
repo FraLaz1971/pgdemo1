@@ -1,0 +1,25 @@
+make: Warning: File 'Makefile.in' has modification time 135 s in the future
+g77 -fno-backslash -o pgprog1 pgdem1.o pgex0.o pgex1.o -Lx86_64-linux-gnu -L/usr/X11R6/lib -lX11 -L`pwd` -lpgplot -lpng -lz 
+ 
+*** Finished compilation of PGPLOT example ***
+ 
+Note that the following files will be needed.
+ 
+       libpgplot.a
+       libpgplot.so
+       grfont.dat
+       rgb.txt
+       pgdisp
+       pgxwin_server
+       libXmPgplot.a
+       XmPgplot.h
+       libXaPgplot.a
+       XaPgplot.h
+       libtkpgplot.a
+       tkpgplot.h
+ 
+Also note that subsequent usage of PGPLOT programs requires that
+the full path of the chosen installation directory be named in
+an environment variable named PGPLOT_DIR.
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.

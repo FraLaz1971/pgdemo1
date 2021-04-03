@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-echo PGPLOT_LIB=$PWD/x86_64-linux-gnu > Makefile.in
+echo export PGPLOT_DIR=$PWD/x86_64-linux-gnu > Makefile.in
 cp Makefile.lnx Makefile
 

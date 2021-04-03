@@ -40,15 +40,15 @@ PGBIND_FLAGS=bsd
 # Loader library-flags
 #
 XLIBS=-L/usr/X11R6/lib -lX11
-LDFLAGS=-Lx86_64-linux-gnu
+LDFLAGS=-Lx86_64-linux-gnu $(XLIBS)
 MOTIF_LIBS=-Lx86_64-linux-gnu -lXm -lXt -L/usr/X11R6/lib -lX11
 ATHENA_LIBS=-Lx86_64-linux-gnu -lXaw -lXt -lXmu -lXext -L/usr/X11R6/lib -lX11
 TK_LIBS=-L/usr/lib -ltk -ltcl -L/usr/X11R6/lib -lX11 -ldl
 #
 #	Loader command for PGPLOT library
 #
-PGPLOT_LIB=-L`pwd` -lpgplot -lpng -lz
-CPGPLOT_LIB=-L`pwd` -lcpgplot -lpgplot -lpng -lz
+PGPLOT_LIB=$(LDFLAGS) -L`pwd` -lpgplot -lpng -lz
+CPGPLOT_LIB=$(LDFLAGS) -L`pwd` -lcpgplot -lpgplot -lpng -lz
 #
 # Shared library creation.
 #
