@@ -39,7 +39,7 @@ PGBIND_FLAGS=bsd
 #
 # Loader library-flags
 #
-LIBS=-L/usr/X11R6/lib -lX11
+LIBS=-Lx86_64-linux-gnu -L/usr/X11R6/lib -lX11
 MOTIF_LIBS=-Lx86_64-linux-gnu -lXm -lXt -L/usr/X11R6/lib -lX11
 ATHENA_LIBS=-Lx86_64-linux-gnu -lXaw -lXt -lXmu -lXext -L/usr/X11R6/lib -lX11
 TK_LIBS=-L/usr/lib -ltk -ltcl -L/usr/X11R6/lib -lX11 -ldl
