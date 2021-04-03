@@ -11,6 +11,8 @@ SHELL=/bin/sh
 RM = rm -f
 OUTEXT = .png
 OUTFILE = simple$(OUTEXT)
+EEXE = .exe
+OEXE = .o
 #	PGPLOT subdirectories
 SRC=.
 #
@@ -155,6 +157,7 @@ pgprog1: $(DEMDIR)/pgdem1.o $(DEMDIR)/pgex0.o $(DEMDIR)/pgex1.o
 # Target "install" is required for Figaro.
 #-----------------------------------------------------------------------
 install:
+	mv pgprog1$(EEXE) $(GFORTRAN_DIR)
 
 run: pgprog1
 	./pgprog1 < pgplot_type.conf
