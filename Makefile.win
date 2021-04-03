@@ -5,7 +5,7 @@
 # This generates the PGPLOT binary files (libraries and demos) in the
 # current default directory (which need not be the source directory).
 #-----------------------------------------------------------------------
-include Makefile.in
+include Makefile-win.in
 SHELL=/bin/sh
 #
 RM = rm -f
@@ -16,7 +16,7 @@ SRC=.
 #
 # Fortran compiler and compilation flags
 #
-FCOMPL=g77
+FCOMPL=i686-w64-mingw32-gfortran
 FFLAGC=-u -Wall -fPIC -O
 FFLAGD=-fno-backslash
 #
@@ -39,16 +39,17 @@ PGBIND_FLAGS=bsd
 #
 # Loader library-flags
 #
+MINGWLIBS=$(GFORTRAN_DIR)/libgcc_s_dw2-1.dll $(GFORTRAN_DIR)/libgfortran-5.dll
 XLIBS=-L/usr/X11R6/lib -lX11
-LDFLAGS=-Lx86_64-linux-gnu $(XLIBS)
-MOTIF_LIBS=-Lx86_64-linux-gnu -lXm -lXt -L/usr/X11R6/lib -lX11
-ATHENA_LIBS=-Lx86_64-linux-gnu -lXaw -lXt -lXmu -lXext -L/usr/X11R6/lib -lX11
+LDFLAGS=-L$(PGPLOT_DIR) $(XLIBS)
+MOTIF_LIBS=-L$(PGPLOT_DIR) -lXm -lXt -L/usr/X11R6/lib -lX11
+ATHENA_LIBS=-L$(PGPLOT_DIR) -lXaw -lXt -lXmu -lXext -L/usr/X11R6/lib -lX11
 TK_LIBS=-L/usr/lib -ltk -ltcl -L/usr/X11R6/lib -lX11 -ldl
 #
 #	Loader command for PGPLOT library
 #
-PGPLOT_LIB=$(LDFLAGS) -L`pwd` -lpgplot -lpng -lz
-CPGPLOT_LIB=$(LDFLAGS) -L`pwd` -lcpgplot -lpgplot -lpng -lz
+PGPLOT_LIB=$(LDFLAGS) $(MINGWLIBS) -L`pwd` -lpgplot -lpng -lz
+CPGPLOT_LIB=$(LDFLAGS) $(MINGWLIBS) -L`pwd` -lcpgplot -lpgplot -lpng -lz
 #
 # Shared library creation.
 #
